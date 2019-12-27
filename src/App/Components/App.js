@@ -15,7 +15,7 @@ const App = () => {
         {
           [...Array(50)].map(()=> <p>Estos es una prueba</p>)
         }
-        <ModalHooks visible={visible} onClose={hide} onShow={show} animation='slideDown' closeOnEsc={true}>
+        <ModalHooks visible={visible} onClose={hide} animation='slideDown' closeOnEsc={true}>
           <div>Content</div>
         </ModalHooks>
       </div>
