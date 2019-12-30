@@ -1,13 +1,33 @@
 import React from 'react'
-import { Title, Subtitle } from '../Title'
-import { StyledRectangle } from './styles'
+import { Title, Subtitle, TitleSection } from '../Title'
+import { StyledRectangle, MainContainer } from './styles'
+import { ActionCard } from '../Cards/ActionCard'
+import { welcomeData } from '../../../data'
+import { ItemCard, ItemCardDone } from '../Cards/ItemCard'
 
-export const Welcome = props => {
+export const Welcome = () => {
+  const { title, subtitle, cards, titleSection1, titleSection2, cardsSection1, cardsSection2 } = welcomeData
   return (
-    <StyledRectangle>
-      <Title>¡Bienvenido!</Title>
-      <Subtitle>Aquí encontrarás una vista previa de la información que cargues a lo largo del tiempo</Subtitle>
-    </StyledRectangle>
+    <MainContainer>
+      <StyledRectangle>
+        <Title>{title}</Title>
+        <Subtitle>{subtitle}</Subtitle>
+        <div className='d-flex'>
+          {cards.map(e => <ActionCard key={e.title} {...e} />)}
+        </div>
+
+        <TitleSection>{titleSection1}</TitleSection>
+        <div className='d-flex'>
+          {cardsSection1.map(e => <ItemCard key={e.title} {...e} />)}
+        </div>
+
+        <TitleSection>{titleSection2}</TitleSection>
+        <div className='d-flex'>
+          {cardsSection2.map(e => <ItemCardDone key={e.title} {...e} />)}
+        </div>
+      </StyledRectangle>
+    </MainContainer>
+
   )
 }
 

@@ -12,7 +12,8 @@ const COLORS = {
   violet_secondary: '#8177ff',
   violet_ternary: '#f3eeff',
   bg_primary: '#fcfaff',
-  bg_secondary: '#ffffff'
+  bg_secondary: '#ffffff',
+  border: '#D6D0E3'
 }
 
 const TEXT_SIZES = {
