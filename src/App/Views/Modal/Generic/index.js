@@ -1,1 +1,1 @@
-// export * from './GenericModal';
+export * from './Modal'

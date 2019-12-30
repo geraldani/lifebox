@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
-import { StyledMask, StyledModal, StyledDialog, StyledCloseButton, StyledContainer } from './styles'
 import './styles.css'
+import { StyledMask, StyledModal, StyledDialog, StyledCloseButton, StyledContainer } from './styles'
 
 const CONTAINER_MODAL = document.getElementById('modal')
 
@@ -69,50 +69,47 @@ const MainModal = props => {
       {...{ isShow, duration, animationType }}
       className={`rodal-fade-${animationType} ${className}`}
       onAnimationEnd={animationEnd}
-      tabIndex="-1"
+      tabIndex='-1'
       ref={el}
       onKeyUp={onKeyUp}
     >
       {
-        showMask && <StyledMask style={customMaskStyles} bgMaskColor={bgMaskColor}
-                                onClick={closeMaskOnClick ? onClose : () => {}} />
+        showMask && <StyledMask style={customMaskStyles} bgMaskColor={bgMaskColor} onClick={closeMaskOnClick ? onClose : () => {}} />
       }
       {
         props.showDialog
           ? <Dialog {...props} animationType={animationType}>{children}</Dialog>
           : <StyledContainer>{children}</StyledContainer>
       }
-
-
     </StyledModal>
   )
 }
 
-const ModalHooks = (props) => ReactDOM.createPortal(<MainModal {...props} />, CONTAINER_MODAL)
+export const Modal = (props) => ReactDOM.createPortal(<MainModal {...props} />, CONTAINER_MODAL)
 
-ModalHooks.propTypes = {
-  width: PropTypes.string, //ancho del recuadro dentro del modal
-  height: PropTypes.string, //alto del recuadro dentro del modal
-  bgColor: PropTypes.string, //color del fondo del recuadro del modal
-  bgMaskColor: PropTypes.string, //color del fondo de la mascara del modal
+Modal.propTypes = {
+  width: PropTypes.string, // ancho del recuadro dentro del modal
+  height: PropTypes.string, // alto del recuadro dentro del modal
+  bgColor: PropTypes.string, // color del fondo del recuadro del modal
+  bgMaskColor: PropTypes.string, // color del fondo de la mascara del modal
   visible: PropTypes.bool, // si el modal es visible o no
   showMask: PropTypes.bool, // si muestra o no el fondo detras del modal
-  showDialog: PropTypes.bool, //si muestra o no el recuadro blanco
-  closeOnEsc: PropTypes.bool, //si se cierra el modal al presionar ESC
+  showDialog: PropTypes.bool, // si muestra o no el recuadro blanco
+  closeOnEsc: PropTypes.bool, // si se cierra el modal al presionar ESC
   closeMaskOnClick: PropTypes.bool, // si se cierra el modal al presionar fuera del recuadro del modal
-  showCloseButton: PropTypes.bool, //si muestra un boton de cerrar en forma de X dentro del modal
+  showCloseButton: PropTypes.bool, // si muestra un boton de cerrar en forma de X dentro del modal
   animation: PropTypes.string, // el tipo de animacion que tendra en modal
   enterAnimation: PropTypes.string, // la animacion al aparecer el modal
   leaveAnimation: PropTypes.string, //  la animacion al desaparecer el modal
-  duration: PropTypes.number, //el tiempo que dura la animacion expresado en ms
+  duration: PropTypes.number, // el tiempo que dura la animacion expresado en ms
   className: PropTypes.string, // alguna clase
   customStyles: PropTypes.object, // stilos custom para el recuadro del modal
-  customMaskStyles: PropTypes.object, //estilos customs para la mascara del modal
+  customMaskStyles: PropTypes.object, // estilos customs para la mascara del modal
   onClose: PropTypes.func.isRequired, // funcion para cerrar el modal
   onAnimationEnd: PropTypes.func // funcion que se ejecuta despues de que el modal se haya ido
 }
 
-ModalHooks.defaultProps = {
+Modal.defaultProps = {
   width: '400px',
   height: '240px',
   bgColor: '#fff',
@@ -131,5 +128,3 @@ ModalHooks.defaultProps = {
   customStyles: {},
   customMaskStyles: {},
 }
-
-export default ModalHooks

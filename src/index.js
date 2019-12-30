@@ -5,13 +5,12 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min'
 import App from './App/Components/App'
 
-
 render()
 
 // Hot Module Replacement
 function render () {
   ReactDOM.render(
-  <App />,
+    <App />,
     document.getElementById('root'))
 }
 
