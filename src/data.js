@@ -60,6 +60,46 @@ const welcomeData = {
     }
   ]
 }
+const menu = [
+  {
+    name: 'Inicio',
+    icon: 'ico_casa_on_2x.png'
+  },
+  {
+    name: 'Acerca de mí',
+    icon: 'ico_usuario_on_2x.png'
+  },
+  {
+    name: 'Salud',
+    icon: 'ico_salud1_on_2x.png'
+  },
+  {
+    name: 'Servicios',
+    icon: 'ico_doc1_on_2x.png'
+  },
+  {
+    name: 'Bienes',
+    icon: 'ico_moneda_on_2x.png'
+  },
+  {
+    name: 'Legales',
+    icon: 'ico_doc2_on_2x.png'
+  },
+  {
+    name: 'Fotografías',
+    icon: 'ico_imagen1_on_2x.png'
+  },
+  {
+    name: 'Cartas',
+    icon: 'ico_mail1_on_2x.png'
+  },
+  {
+    name: 'Destinatarios',
+    icon: 'ico_compartir1_on_2x.png'
+  }
+]
+
 export {
-  welcomeData
+  welcomeData,
+  menu
 }

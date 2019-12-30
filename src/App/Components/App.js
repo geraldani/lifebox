@@ -9,10 +9,10 @@ const App = () => {
    const hide = () => setVisible(false)*/
 
   return (
-    <div>
+    <>
       <GlobalStyles />
       <Welcome />
-    </div>
+    </>
   )
 }
 

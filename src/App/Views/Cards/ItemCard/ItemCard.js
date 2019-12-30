@@ -1,21 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { StyledCard, StyledTitle } from './styles'
+import { StyledCard } from './styles'
 import PropTypes from 'prop-types'
 import check from '../../../../assets/ico_check_on_2x.png'
-
-const loadImage = (imageName, setIcon) => {
-  // const images = require.context('../../../../assets', true)
-  // const icon = images('./' + props.icon).default
-  import(`../../../../assets/${imageName}`).then(image => {
-    setIcon(image.default)
-  })
-}
+import { useLoadImages } from '../../../Hooks'
 
 export const ItemCard = (props) => {
-  const [icon, setIcon] = useState('')
-  useEffect(() => {
-    loadImage(props.icon, setIcon)
-  }, [])
+  const [icon] = useLoadImages(props.icon)
 
   return (
     <StyledCard done={props.done}>

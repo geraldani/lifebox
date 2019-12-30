@@ -26,6 +26,10 @@ const GlobalStyles = createGlobalStyle`
   input:focus{
     outline: none;  
   }
+  button{
+    border: none;
+    background: none;
+  }
 `
 
 export {
