@@ -1,6 +1,7 @@
-import React, {useEffect, useState} from 'react'
-import { StyledCard } from './styles'
+import React, { useEffect, useState } from 'react'
+import { StyledCard, StyledTitle } from './styles'
 import PropTypes from 'prop-types'
+import check from '../../../../assets/ico_check_on_2x.png'
 
 const loadImage = (imageName, setIcon) => {
   // const images = require.context('../../../../assets', true)
@@ -17,43 +18,51 @@ export const ItemCard = (props) => {
   }, [])
 
   return (
-    <StyledCard>
+    <StyledCard done={props.done}>
       <img src={icon} alt='icon' />
-      {props.title}
+      <h5>{props.title}</h5>
+      <p>{props.description}</p>
+      <h6>{props.status}</h6>
+      {
+        props.done &&
+        <div>
+          <div><img src={check} alt='checkIcon' /></div>
+        </div>
+      }
     </StyledCard>
   )
 }
 
 export const ItemCardDone = props => (
-  <StyledCard>
-    {props.title}
-  </StyledCard>
+  <ItemCard {...props} done />
 )
 
 ItemCard.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   status: PropTypes.string,
-  icon: PropTypes.string
+  icon: PropTypes.string,
+  done: PropTypes.bool
 }
 
 ItemCard.defaultProps = {
   title: '',
   description: '',
   status: '',
-  icon: ''
+  icon: '',
+  done: false
 }
 
 ItemCardDone.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
-  name: PropTypes.string,
+  status: PropTypes.string,
   icon: PropTypes.string
 }
 
 ItemCardDone.defaultProps = {
   title: '',
   description: '',
-  name: '',
+  status: '',
   icon: ''
 }

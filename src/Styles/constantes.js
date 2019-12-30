@@ -11,6 +11,7 @@ const COLORS = {
   violet_primary: '#651fff',
   violet_secondary: '#8177ff',
   violet_ternary: '#f3eeff',
+  violet_forth: '#A69FFF',
   bg_primary: '#fcfaff',
   bg_secondary: '#ffffff',
   border: '#D6D0E3'
@@ -20,7 +21,9 @@ const TEXT_SIZES = {
   titlePage: '40px',
   titleSection: '24px',
   lg: '20px', // subtitle
+  card: '18px',
   md: '16px', // field Text
+  text: '14px',
   sm: '12px' // gield message
 }
 

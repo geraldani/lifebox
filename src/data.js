@@ -43,19 +43,19 @@ const welcomeData = {
     {
       title: 'Bienes',
       description: 'Último agregado',
-      name: 'Escritura de la casa',
+      status: 'Escritura de la casa',
       icon: 'ico_dinero_on_2x.png'
     },
     {
       title: 'Legales',
       description: 'Último agregado',
-      name: 'Testamento',
+      status: 'Testamento',
       icon: 'ico_.doc_on_2x.png'
     },
     {
       title: 'Destinatarios',
       description: 'Último agregado',
-      name: 'Dr. Fernando Rocha Gonzales',
+      status: 'Dr. Fernando Rocha Gonzales',
       icon: 'ico_compartir_on_2x.png'
     }
   ]
