@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
-import { StyledMask, StyledModal, StyledDialog, StyledCloseButton } from './styles'
+import { StyledMask, StyledModal, StyledDialog, StyledCloseButton, StyledContainer } from './styles'
 import './styles.css'
 
 const CONTAINER_MODAL = document.getElementById('modal')
@@ -16,7 +16,7 @@ const Dialog = props => {
   const styleProps = {
     width: width,
     height: height,
-    animationDuration: duration + 'ms',
+    animationDuration: duration,
     bgColor: bgColor
   }
 
@@ -77,10 +77,13 @@ const MainModal = props => {
         showMask && <StyledMask style={customMaskStyles} bgMaskColor={bgMaskColor}
                                 onClick={closeMaskOnClick ? onClose : () => {}} />
       }
+      {
+        props.showDialog
+          ? <Dialog {...props} animationType={animationType}>{children}</Dialog>
+          : <StyledContainer>{children}</StyledContainer>
+      }
 
-      <Dialog {...props} animationType={animationType}>
-        {children}
-      </Dialog>
+
     </StyledModal>
   )
 }
@@ -94,6 +97,7 @@ ModalHooks.propTypes = {
   bgMaskColor: PropTypes.string, //color del fondo de la mascara del modal
   visible: PropTypes.bool, // si el modal es visible o no
   showMask: PropTypes.bool, // si muestra o no el fondo detras del modal
+  showDialog: PropTypes.bool, //si muestra o no el recuadro blanco
   closeOnEsc: PropTypes.bool, //si se cierra el modal al presionar ESC
   closeMaskOnClick: PropTypes.bool, // si se cierra el modal al presionar fuera del recuadro del modal
   showCloseButton: PropTypes.bool, //si muestra un boton de cerrar en forma de X dentro del modal
@@ -115,6 +119,7 @@ ModalHooks.defaultProps = {
   bgMaskColor: 'rgba(0, 0, 0, .3)',
   visible: false,
   showMask: true,
+  showDialog: true,
   closeOnEsc: true,
   closeMaskOnClick: true,
   showCloseButton: true,

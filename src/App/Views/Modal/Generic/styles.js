@@ -33,7 +33,7 @@ const StyledDialog = styled.div`
   box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
   width: ${props => props.width};
   height: ${props => props.height};
-  animation-duration: ${props => props.animationDuration};
+  animation-duration: ${props => props.animationDuration}ms;
   &:focus {
     outline: none;
   }
@@ -83,9 +83,23 @@ const StyledCloseButton = styled.button`
   }
 `
 
+
+const StyledContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+`
 export {
   StyledModal,
   StyledMask,
   StyledDialog,
-  StyledCloseButton
+  StyledCloseButton,
+  StyledContainer
 }

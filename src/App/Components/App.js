@@ -17,6 +17,9 @@ const App = () => {
         }
         <ModalHooks visible={visible} onClose={hide} animation='slideDown' closeOnEsc={true}>
           <div>Content</div>
+          <div>Content</div>
+          <div>Content</div>
+          <div>Content</div>
         </ModalHooks>
       </div>
     )
