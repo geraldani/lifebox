@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { COLORS, TEXT_WEIGHT } from '../../../../Styles/constantes'
+import { Shadow } from '../../../../Styles/GlobalStyles'
 
 
 const StyledTitle = styled.h2`
@@ -20,11 +21,11 @@ const StyledButtonAdd = styled.button`
   width: 42px;
   border-radius: 10px;
   background-color: ${COLORS.bg_secondary};
-  box-shadow: 0 8px 8px 0 rgba(55,27,0,0.15);
   border: none;
   position: absolute;
   top: 16px;
   right: 16px;
+  ${Shadow}
   svg{
     width: 20px;
     height: 20px;  

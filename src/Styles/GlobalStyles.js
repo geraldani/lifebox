@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle, css } from 'styled-components'
 import { TEXT_SIZES, TEXT_WEIGHT } from './constantes'
 
 const GlobalStyles = createGlobalStyle`
@@ -32,6 +32,9 @@ const GlobalStyles = createGlobalStyle`
   }
 `
 
+const Shadow = css`
+  box-shadow: 0 8px 8px 0 rgba(55,27,0,0.15);
+`
 export {
-  GlobalStyles
+  GlobalStyles, Shadow
 }

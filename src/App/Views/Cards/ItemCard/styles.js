@@ -1,15 +1,20 @@
 import styled, { css } from 'styled-components'
 import { COLORS, TEXT_SIZES, TEXT_WEIGHT } from '../../../../Styles/constantes'
+import { Shadow } from '../../../../Styles/GlobalStyles'
 
 const StyledCard = styled.div`
   box-sizing: border-box;
-  //height: 229px;
   width: 220px;
+  //width: 25%;
   border: 1px solid ${COLORS.border};
   border-radius: 8px;
-  margin: 24px 20px 40px 0;
+  margin-left: 20px;
   padding: 23px 16px 16px 16px;
   position: relative;
+  transition: all 200ms;
+  &:hover{
+    ${Shadow}
+  }
   img{
     width: 68px;
     display: block;

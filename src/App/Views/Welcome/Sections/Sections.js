@@ -1,6 +1,7 @@
 import React from 'react'
 import { TitleSection } from '../../Title'
 import { ItemCard, ItemCardDone } from '../../Cards/ItemCard'
+import { StyledCardsContainer } from './styles'
 import PropTypes from 'prop-types'
 
 export const SectionCard = (props) => {
@@ -8,9 +9,9 @@ export const SectionCard = (props) => {
   return (
     <>
       <TitleSection>{props.title}</TitleSection>
-      <div className='d-flex'>
+      <StyledCardsContainer className='d-flex'>
         {props.cards.map(e => <Card key={e.title} {...e} />)}
-      </div>
+      </StyledCardsContainer>
     </>
   )
 }

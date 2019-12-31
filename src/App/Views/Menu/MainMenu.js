@@ -1,46 +1,50 @@
-import React, { useState } from 'react'
-import { StyledContainer, StyledBackButton, StyledLogo, StyledIconsContainer, StyledIcon } from './styles'
+import React from 'react'
+import { StyledContainer, StyledOpenMenuButton, StyledLogo, StyledIconsContainer, StyledIcon } from './styles'
 import { menu } from '../../../data'
-import arrow from '../../../assets/ico_flechadere_on_2x.png'
-import logo from '../../../assets/Logo/ISO.png'
+import arrow from '../../../assets/ico_flechadere_on_3x.png'
+import logoClosed from '../../../assets/Logo/ISO.png'
+import logoOpened from '../../../assets/Logo/TexOscuro.png'
 import PropTypes from 'prop-types'
 import { useLoadImages } from '../../Hooks'
+import { Avatar } from '../Avatar'
 
-const IconMenu = ({ name, icon }) => {
+const IconMenu = ({ name, icon, active }) => {
   const [iconURL] = useLoadImages(icon)
   return (
-    <StyledIcon>
+    <StyledIcon active={active}>
       <img src={iconURL} alt='logo' />
+      <span>{name}</span>
     </StyledIcon>
   )
 }
 
 export const Menu = props => {
-  // const [drop, setDrop] = useState(false)
   return (
-    <StyledContainer>
+    <StyledContainer open={props.openedMenu}>
+      <div className='d-flex flex-column'>
+        <StyledOpenMenuButton onClick={props.openCloseMenu}>
+          <img src={arrow} alt='arrowEnter' />
+        </StyledOpenMenuButton>
 
-      <StyledBackButton>
-        <img src={arrow} alt='arrowEnter' />
-      </StyledBackButton>
+        <StyledLogo src={props.openedMenu ? logoOpened : logoClosed} alt='logo' />
 
-      <StyledLogo src={logo} alt='logo' />
+        <StyledIconsContainer>
+          {
+            menu.map(bar => <IconMenu key={bar.name} {...bar} active={bar.name === 'Inicio'} />)
+          }
+        </StyledIconsContainer>
+      </div>
 
-      <StyledIconsContainer>
-        {
-          menu.map(bar => <IconMenu key={bar.name} {...bar} />)
-        }
-      </StyledIconsContainer>
+      <Avatar />
     </StyledContainer>
   )
 }
 
 Menu.propTypes = {
-  name: PropTypes.string,
-  icon: PropTypes.string
+  openCloseMenu: PropTypes.func.isRequired,
+  openedMenu: PropTypes.bool
 }
 
 Menu.defaultProps = {
-  name: '',
-  icon: ''
+  openedMenu: false
 }
