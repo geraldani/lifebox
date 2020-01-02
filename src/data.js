@@ -1,4 +1,6 @@
-const welcomeData = {
+import { ROUTES } from './App/Components/constantes'
+
+const inicioData = {
   title: '¡Bienvenido!',
   subtitle: 'Aquí encontrarás una vista previa de la información que cargues a lo largo del tiempo',
   cards: [
@@ -63,43 +65,104 @@ const welcomeData = {
 const menu = [
   {
     name: 'Inicio',
-    icon: 'ico_casa_on_2x.png'
+    icon: 'ico_casa_on_2x.png',
+    link: ROUTES.home
   },
   {
     name: 'Acerca de mí',
-    icon: 'ico_usuario_on_2x.png'
+    icon: 'ico_usuario_on_2x.png',
+    link: ROUTES.aboutMe
   },
   {
     name: 'Salud',
-    icon: 'ico_salud1_on_2x.png'
+    icon: 'ico_salud1_on_2x.png',
+    link: ROUTES.health
   },
   {
     name: 'Servicios',
-    icon: 'ico_doc1_on_2x.png'
+    icon: 'ico_doc1_on_2x.png',
+    link: ROUTES.services
   },
   {
     name: 'Bienes',
-    icon: 'ico_moneda_on_2x.png'
+    icon: 'ico_moneda_on_2x.png',
+    link: ROUTES.bienes
   },
   {
     name: 'Legales',
-    icon: 'ico_doc2_on_2x.png'
+    icon: 'ico_doc2_on_2x.png',
+    link: ROUTES.legal
   },
   {
     name: 'Fotografías',
-    icon: 'ico_imagen1_on_2x.png'
+    icon: 'ico_imagen1_on_2x.png',
+    link: ROUTES.photo
   },
   {
     name: 'Cartas',
-    icon: 'ico_mail1_on_2x.png'
+    icon: 'ico_mail1_on_2x.png',
+    link: ROUTES.letters
   },
   {
     name: 'Destinatarios',
-    icon: 'ico_compartir1_on_2x.png'
+    icon: 'ico_compartir1_on_2x.png',
+    link: ROUTES.destinatary
+  }
+]
+const lettersData = [
+  {
+    title: 'Para mis hijos',
+    letters: [
+      {
+        name: 'Gracias Maru de parte de parte de toda la familia',
+        destinatary: 'María Rodríguez',
+        date: new Date(2020, 5, 27)
+      },
+      {
+        name: 'Feliz cumpleaños de parte de parte de toda la familia',
+        destinatary: 'María Rodríguez',
+        date: new Date(2025, 4, 7)
+      },
+      {
+        name: 'Para tus hermanos de parte de parte de toda la familia',
+        destinatary: 'Jorge Ocampo',
+        date: new Date(2019, 5, 27)
+      },
+      {
+        name: 'Martina querida',
+        destinatary: 'Martina Rodríguez',
+        date: 'Cuando ya no esté'
+      }
+    ]
+  },
+  {
+    title: 'Para mis nietos',
+    letters: [
+      {
+        name: 'Para Joaco',
+        destinatary: 'Joaquin Rodríguez',
+        date: new Date(2020, 5, 27)
+      },
+      {
+        name: 'Feliz cumpleaños de parte de parte de toda la familia',
+        destinatary: 'María Rodríguez',
+        date: new Date(2023, 3, 15)
+      },
+      {
+        name: 'Para Mati',
+        destinatary: 'Matías Rodríguez',
+        date: new Date(2023, 6, 23)
+      },
+      {
+        name: 'Martina Cata',
+        destinatary: 'Catalina Rodríguez',
+        date: new Date(2025, 9, 25)
+      }
+    ]
   }
 ]
 
 export {
-  welcomeData,
+  inicioData,
   menu
 }

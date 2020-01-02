@@ -18,7 +18,7 @@ const COLORS = {
   lightgrey: '#F6F2FF'
 }
 
-const TEXT_SIZES = {
+const FONT_SIZE = {
   titlePage: '40px',
   titleSection: '24px',
   lg: '20px', // subtitle
@@ -28,7 +28,7 @@ const TEXT_SIZES = {
   sm: '12px' // gield message
 }
 
-const TEXT_WEIGHT = {
+const FONT_WEIGHT = {
   extraLight: 200,
   light: 300,
   regular: 400,
@@ -40,6 +40,6 @@ const TEXT_WEIGHT = {
 
 export {
   COLORS,
-  TEXT_SIZES,
-  TEXT_WEIGHT
+  FONT_SIZE,
+  FONT_WEIGHT
 }

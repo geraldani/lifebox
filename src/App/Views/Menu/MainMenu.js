@@ -1,5 +1,14 @@
 import React from 'react'
-import { StyledContainer, StyledOpenMenuButton, StyledLogo, StyledIconsContainer, StyledIcon } from './styles'
+import {
+  StyledContainer,
+  StyledOpenMenuButton,
+  StyledLogo,
+  StyledIconsContainer,
+  StyledIcon,
+  StyledIconContainer,
+  StyledSessionUser,
+  StyledUserInfo
+} from './styles'
 import { menu } from '../../../data'
 import arrow from '../../../assets/ico_flechadere_on_3x.png'
 import logoClosed from '../../../assets/Logo/ISO.png'
@@ -8,17 +17,25 @@ import PropTypes from 'prop-types'
 import { useLoadImages } from '../../Hooks'
 import { Avatar } from '../Avatar'
 
-const IconMenu = ({ name, icon, active }) => {
+const IconMenu = ({ name, icon, open, link }) => {
   const [iconURL] = useLoadImages(icon)
   return (
-    <StyledIcon active={active}>
-      <img src={iconURL} alt='logo' />
-      <span>{name}</span>
-    </StyledIcon>
+    <StyledIconContainer to={link} open={open} activeClassName='active'>
+      <div className='position-relative'>
+        <StyledIcon open={open}>
+          <img src={iconURL} alt='logo' />
+        </StyledIcon>
+        <p>{name}</p>
+      </div>
+    </StyledIconContainer>
   )
 }
 
 export const Menu = props => {
+  const user = {
+    name: 'Geraldyn Chirinos'
+  }
+
   return (
     <StyledContainer open={props.openedMenu}>
       <div className='d-flex flex-column'>
@@ -30,12 +47,18 @@ export const Menu = props => {
 
         <StyledIconsContainer>
           {
-            menu.map(bar => <IconMenu key={bar.name} {...bar} active={bar.name === 'Inicio'} />)
+            menu.map(bar => <IconMenu key={bar.name} {...bar} open={props.openedMenu} />)
           }
         </StyledIconsContainer>
       </div>
 
-      <Avatar />
+      <StyledSessionUser>
+        <Avatar />
+        <StyledUserInfo>
+          <p>{user.name}</p>
+          <button onClick={props.openCloseMenu}>Cerrar sesión</button>
+        </StyledUserInfo>
+      </StyledSessionUser>
     </StyledContainer>
   )
 }

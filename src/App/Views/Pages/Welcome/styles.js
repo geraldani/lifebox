@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components'
-import { COLORS } from '../../../Styles/constantes'
+import { COLORS } from '../../../../Styles/constantes'
 
 const StyledRectangle = styled.div`
   background: ${COLORS.bg_primary};
@@ -11,7 +11,7 @@ const StyledRectangle = styled.div`
   //grid-column-gap: 20px;
 `
 
-const MainContainer = styled.div`
+const StyledMainContainer = styled.div`
   display: grid;
   grid-template-columns: ${props => props.open ? '282px' : '90px'} auto;
   transition: all 2s linear;
@@ -19,5 +19,5 @@ const MainContainer = styled.div`
 
 export {
   StyledRectangle,
-  MainContainer
+  StyledMainContainer
 }

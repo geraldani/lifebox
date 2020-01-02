@@ -1,6 +1,6 @@
 import React from 'react'
-import { TitleSection } from '../../Title'
-import { ItemCard, ItemCardDone } from '../../Cards/ItemCard'
+import { TitleSection } from '../../../Title'
+import { ItemCard, ItemCardDone } from '../../../Cards/ItemCard'
 import { StyledCardsContainer } from './styles'
 import PropTypes from 'prop-types'
 

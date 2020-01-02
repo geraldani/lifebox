@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { COLORS, TEXT_SIZES, TEXT_WEIGHT } from '../../../../Styles/constantes'
+import { COLORS, FONT_SIZE, FONT_WEIGHT } from '../../../../Styles/constantes'
 import { Shadow } from '../../../../Styles/GlobalStyles'
 
 const StyledCard = styled.div`
@@ -26,8 +26,8 @@ const StyledCard = styled.div`
   }
    
   h5{
-    font-size: ${TEXT_SIZES.card};
-    font-weight: ${TEXT_WEIGHT.extraBold};
+    font-size: ${FONT_SIZE.card};
+    font-weight: ${FONT_WEIGHT.extraBold};
     line-height: 30px;
     margin-top: 43px;
     margin-bottom: 6px;
@@ -35,13 +35,13 @@ const StyledCard = styled.div`
   
   p{
     line-height: 23px;
-    font-size: ${TEXT_SIZES.text};
-    font-weight: ${TEXT_WEIGHT.light};
+    font-size: ${FONT_SIZE.text};
+    font-weight: ${FONT_WEIGHT.light};
   }
   
   h6{
-    font-size: ${TEXT_SIZES.md};
-    font-weight: ${TEXT_WEIGHT.medium};
+    font-size: ${FONT_SIZE.md};
+    font-weight: ${FONT_WEIGHT.medium};
     line-height: 27px;
     position: relative;
     padding-left: ${props => props.done ? '0' : '14px'};

@@ -1,10 +1,10 @@
 import styled from 'styled-components'
-import { COLORS, TEXT_WEIGHT } from '../../../../Styles/constantes'
+import { COLORS, FONT_WEIGHT } from '../../../../Styles/constantes'
 import { Shadow } from '../../../../Styles/GlobalStyles'
 
 
 const StyledTitle = styled.h2`
-  font-weight: ${TEXT_WEIGHT.extraBold};
+  font-weight: ${FONT_WEIGHT.extraBold};
   color: ${COLORS.bg_secondary};
   line-height: 40px;
   margin-bottom: 16px;
