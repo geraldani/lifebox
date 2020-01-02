@@ -8,7 +8,7 @@ export const useLoadImages = (iconUrl) => {
       const image = await import(`../../assets/${iconUrl}`)
       setIcon(image.default)
     }
-    getImage()
+    if(iconUrl) getImage()
   }, [])
 
   return [icon]

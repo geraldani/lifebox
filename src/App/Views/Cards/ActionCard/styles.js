@@ -40,7 +40,6 @@ const StyledContainer = styled.div`
   width: 459px;
   grid-row: 4;
   margin-right: 20px;
-  margin-top: 46px;
   margin-bottom: 46px;
   position: relative;
 `

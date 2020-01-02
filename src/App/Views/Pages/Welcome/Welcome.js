@@ -4,8 +4,8 @@ import { ActionCard } from '../../Cards/ActionCard'
 import { inicioData } from '../../../../data'
 import { SectionCard } from './Sections'
 
-export const Welcome = () => {
-  const { title, subtitle, cards, titleSection1, titleSection2, cardsSection1, cardsSection2 } = inicioData
+export const Welcome = (pros) => {
+  const { title, subtitle, cards, sectionCards } = inicioData
   return (
     <div>
       <Title>{title}</Title>
@@ -14,9 +14,9 @@ export const Welcome = () => {
       <div className='d-flex'>
         {cards.map(e => <ActionCard key={e.title} {...e} />)}
       </div>
-
-      <SectionCard title={titleSection1} cards={cardsSection1} />
-      <SectionCard title={titleSection2} cards={cardsSection2} done />
+      {
+        sectionCards.map(cards => <SectionCard key={cards.title} {...cards} />)
+      }
     </div>
   )
 }

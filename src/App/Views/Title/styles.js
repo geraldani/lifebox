@@ -10,7 +10,8 @@ const StyledTitle = styled.h1`
 const StyledSubtitle = styled.h3`
   line-height: 34px;
   font-weight: ${FONT_WEIGHT.extraLight};
-  color: ${COLORS.action_secondary}
+  color: ${COLORS.action_secondary};
+  margin-bottom: 48px;
 `
 
 const StyledTitleSection = styled.h2`

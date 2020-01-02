@@ -13,52 +13,55 @@ const inicioData = {
       text: 'Para que tus seres queridos o tus asesores legales puedan acceder a la información que consideres importante asignarles.'
     }
   ],
-  titleSection1: 'Lo que aún no cargaste',
-  cardsSection1: [
+  sectionCards: [
     {
-      title: 'Fotografías',
-      description: 'Estado de carga',
-      status: 'Pendiente',
-      icon: 'ico_imagen_on_2x.png'
+      title: 'Lo que aún no cargaste',
+      sections: ['Estado de carga'],
+      type: 'status',
+      cards: [
+        {
+          title: 'Fotografías',
+          icon: 'ico_imagen_on_2x.png',
+          sectionsText: ['Pendiente']
+        },
+        {
+          title: 'Cartas',
+          sectionsText: ['Pendiente'],
+          icon: 'ico_mail_on_2x.png'
+        },
+        {
+          title: 'Salud',
+          sectionsText: ['Pendiente'],
+          icon: 'ico_salud_on_2x.png'
+        },
+        {
+          title: 'Servicios',
+          sectionsText: ['Pendiente'],
+          icon: 'ico_doc_on_2x.png'
+        }
+      ]
     },
     {
-      title: 'Cartas',
-      description: 'Estado de carga',
-      status: 'Pendiente',
-      icon: 'ico_mail_on_2x.png'
-    },
-    {
-      title: 'Salud',
-      description: 'Estado de carga',
-      status: 'Pendiente',
-      icon: 'ico_salud_on_2x.png'
-    },
-    {
-      title: 'Servicios',
-      description: 'Estado de carga',
-      status: 'Pendiente',
-      icon: 'ico_doc_on_2x.png'
-    }
-  ],
-  titleSection2: 'Lo que fuiste cargando',
-  cardsSection2: [
-    {
-      title: 'Bienes',
-      description: 'Último agregado',
-      status: 'Escritura de la casa',
-      icon: 'ico_dinero_on_2x.png'
-    },
-    {
-      title: 'Legales',
-      description: 'Último agregado',
-      status: 'Testamento',
-      icon: 'ico_.doc_on_2x.png'
-    },
-    {
-      title: 'Destinatarios',
-      description: 'Último agregado',
-      status: 'Dr. Fernando Rocha Gonzales',
-      icon: 'ico_compartir_on_2x.png'
+      title: 'Lo que fuiste cargando',
+      sections: ['Último agregado'],
+      type: 'added',
+      cards: [
+        {
+          title: 'Bienes',
+          sectionsText: ['Escritura de la casa'],
+          icon: 'ico_dinero_on_2x.png'
+        },
+        {
+          title: 'Legales',
+          sectionsText: ['Testamento'],
+          icon: 'ico_.doc_on_2x.png'
+        },
+        {
+          title: 'Destinatarios',
+          sectionsText: ['Dr. Fernando Rocha Gonzales'],
+          icon: 'ico_compartir_on_2x.png'
+        }
+      ]
     }
   ]
 }
@@ -109,60 +112,61 @@ const menu = [
     link: ROUTES.destinatary
   }
 ]
-const lettersData = [
-  {
-    title: 'Para mis hijos',
-    letters: [
-      {
-        name: 'Gracias Maru de parte de parte de toda la familia',
-        destinatary: 'María Rodríguez',
-        date: new Date(2020, 5, 27)
-      },
-      {
-        name: 'Feliz cumpleaños de parte de parte de toda la familia',
-        destinatary: 'María Rodríguez',
-        date: new Date(2025, 4, 7)
-      },
-      {
-        name: 'Para tus hermanos de parte de parte de toda la familia',
-        destinatary: 'Jorge Ocampo',
-        date: new Date(2019, 5, 27)
-      },
-      {
-        name: 'Martina querida',
-        destinatary: 'Martina Rodríguez',
-        date: 'Cuando ya no esté'
-      }
-    ]
-  },
-  {
-    title: 'Para mis nietos',
-    letters: [
-      {
-        name: 'Para Joaco',
-        destinatary: 'Joaquin Rodríguez',
-        date: new Date(2020, 5, 27)
-      },
-      {
-        name: 'Feliz cumpleaños de parte de parte de toda la familia',
-        destinatary: 'María Rodríguez',
-        date: new Date(2023, 3, 15)
-      },
-      {
-        name: 'Para Mati',
-        destinatary: 'Matías Rodríguez',
-        date: new Date(2023, 6, 23)
-      },
-      {
-        name: 'Martina Cata',
-        destinatary: 'Catalina Rodríguez',
-        date: new Date(2025, 9, 25)
-      }
-    ]
-  }
-]
+const lettersData = {
+  title: 'Cartas',
+  subtitle: 'En esta sección podrás dejar las cartas para tus destinatarios.',
+  sectionCards: [
+    {
+      title: 'Para mis hijos',
+      sections: ['Destinatario', 'Momento de apertura'],
+      type: 'letter',
+      cards: [
+        {
+          title: 'Gracias Maru de parte de parte de toda la familia',
+          sectionsText: ['María Rodríguez', '27/05/2020']
+        },
+        {
+          title: 'Feliz cumpleaños de parte de parte de toda la familia',
+          sectionsText: ['María Rodríguez', '07/04/2025']
+        },
+        {
+          title: 'Para tus hermanos de parte de parte de toda la familia',
+          sectionsText: ['Jorge Ocampo', '27/05/2019']
+        },
+        {
+          title: 'Martina querida',
+          sectionsText: ['Martina Rodríguez', 'Cuando ya no esté']
+        }
+      ]
+    },
+    {
+      title: 'Para mis nietos',
+      sections: ['Destinatario', 'Momento de apertura'],
+      type: 'letter',
+      cards: [
+        {
+          title: 'Para Joaco',
+          sectionsText: ['Joaquin Rodríguez', '27/05/2020']
+        },
+        {
+          title: 'Feliz cumpleaños de parte de parte de toda la familia',
+          sectionsText: ['María Rodríguez', '15/03/2023']
+        },
+        {
+          title: 'Para Mati',
+          sectionsText: ['Matías Rodríguez', '23/06/2023']
+        },
+        {
+          title: 'Martina Cata',
+          sectionsText: ['Catalina Rodríguez', '25/09/2025']
+        }
+      ]
+    }
+  ]
+}
 
 export {
   inicioData,
-  menu
+  menu,
+  lettersData
 }
