@@ -69,7 +69,12 @@ const menu = [
   {
     name: 'Inicio',
     icon: 'ico_casa_on_2x.png',
-    link: ROUTES.home
+    link: ROUTES.start
+  },
+  {
+    name: 'Cartas',
+    icon: 'ico_mail1_on_2x.png',
+    link: ROUTES.letters
   },
   {
     name: 'Acerca de mí',
@@ -100,11 +105,6 @@ const menu = [
     name: 'Fotografías',
     icon: 'ico_imagen1_on_2x.png',
     link: ROUTES.photo
-  },
-  {
-    name: 'Cartas',
-    icon: 'ico_mail1_on_2x.png',
-    link: ROUTES.letters
   },
   {
     name: 'Destinatarios',

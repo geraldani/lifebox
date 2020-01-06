@@ -2,7 +2,8 @@ import { createBrowserHistory } from 'history'
 const History = createBrowserHistory()
 
 const ROUTES = {
-  home: '/inicio',
+  home: '/',
+  start: '/inicio',
   aboutMe: '/acerca-de-mi',
   health: '/salud',
   services: '/servicios',

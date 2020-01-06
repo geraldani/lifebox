@@ -15,7 +15,8 @@ const COLORS = {
   bg_primary: '#fcfaff',
   bg_secondary: '#ffffff',
   border: '#D6D0E3',
-  lightgrey: '#F6F2FF'
+  lightgrey: '#F6F2FF',
+  gray: '#9F9E9F'
 }
 
 const FONT_SIZE = {

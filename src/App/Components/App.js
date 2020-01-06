@@ -25,6 +25,7 @@ const App = () => {
         <StyledRectangle open={openedMenu}>
           <Switch>
             <Route exact path={ROUTES.home} component={Welcome} />
+            <Route exact path={ROUTES.start} component={Welcome} />
             <Route exact path={ROUTES.health} component={Health} />
             <Route exact path={ROUTES.services} component={Services} />
             <Route exact path={ROUTES.bienes} component={Bienes} />
