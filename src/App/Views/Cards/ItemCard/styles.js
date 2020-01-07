@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 import { COLORS, FONT_SIZE, FONT_WEIGHT } from '../../../../Styles/constantes'
-import { Shadow } from '../../../../Styles/GlobalStyles'
+import { CenteredItemColum, CenteredItemRow, Shadow } from '../../../../Styles/GlobalStyles'
 
 const heightRectangleAdded = '111px'
 
@@ -40,6 +40,31 @@ const styledCardItem = (type) => {
           }
         `
       )
+    case 'addImage':
+      return (
+        css`
+          ${CenteredItemRow};
+          ${StyledIconContainer}{
+            ${CenteredItemColum};
+            cursor: pointer;
+            img{
+              ${Shadow}
+              width: 42px;
+              height: 42px;
+              background-color: ${COLORS.action_primary};
+              padding: 15px;
+              border-radius: 10px;
+            }
+            p{
+              color: ${COLORS.action_primary};
+              font-weight: ${FONT_WEIGHT.extraBold};
+              font-size: ${FONT_SIZE.sm};
+              line-height: 20px;
+              margin-top: 16px;
+            }
+          }
+        `
+      )
   }
 }
 
@@ -64,7 +89,7 @@ const StyledCardSubItemText = styled.p`
     position: relative;
     margin-top: -6px;
 `
-const StyledAddIcon = styled.div`
+const StyledCheckIcon = styled.div`
   position: absolute;
   height: 26px;
   width: 26px;
@@ -80,6 +105,8 @@ const StyledAddIcon = styled.div`
     }
 `
 
+const StyledIconContainer = styled.div``
+
 const StyledCard = styled.div`
   box-sizing: border-box;
   width: 220px;
@@ -93,7 +120,7 @@ const StyledCard = styled.div`
   &:hover{
     ${Shadow}
   }
-  &>img{
+  ${StyledIconContainer} img{
     width: 68px;
   }
   ${StyledTitleCard}, ${StyledCardSubItem}, ${StyledCardSubItemText}{
@@ -112,5 +139,6 @@ export {
   StyledTitleCard,
   StyledCardSubItem,
   StyledCardSubItemText,
-  StyledAddIcon
+  StyledCheckIcon,
+  StyledIconContainer
 }

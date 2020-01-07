@@ -4,7 +4,7 @@ import { ActionCard } from '../../Cards/ActionCard'
 import { inicioData } from '../../../../data'
 import { SectionCard } from './Sections'
 
-export const Welcome = (pros) => {
+export const Welcome = (props) => {
   const { title, subtitle, cards, sectionCards } = inicioData
   return (
     <div>

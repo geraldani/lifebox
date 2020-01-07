@@ -40,7 +40,7 @@ const StyledIcon = styled.div`
   border-radius:8px;
   img{
     width: ${iconSize};
-    height: ${iconSize};
+    // height: ${iconSize};
   }
   &+p{
     visibility: hidden;

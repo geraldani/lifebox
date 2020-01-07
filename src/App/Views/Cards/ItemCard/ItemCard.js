@@ -1,46 +1,66 @@
 import React from 'react'
-import { StyledCard, StyledTitleCard, StyledCardSubItem, StyledCardSubItemText, StyledAddIcon } from './styles'
+import {
+  StyledCard,
+  StyledTitleCard,
+  StyledCardSubItem,
+  StyledCardSubItemText,
+  StyledCheckIcon,
+  StyledIconContainer
+} from './styles'
 import PropTypes from 'prop-types'
 import check from '../../../../assets/ico_check_on_2x.png'
 import { useLoadImages } from '../../../Hooks'
 import letterIcon from '../../../../assets/ico_mail_on_2x.png'
+import photoIcon from '../../../../assets/ico_imagen_on_2x.png'
+import addIcon from '../../../../assets/ico_mas_on_2x.png'
 
 export const ItemCard = (props) => {
-  let iconDefault
-  if (props.type === 'letter') {
-    iconDefault = letterIcon
+  let icon
+  switch (props.type) {
+    case 'letter':
+      icon = letterIcon
+      break
+    case 'photo':
+      icon = photoIcon
+      break
+    case 'addImage':
+      icon = addIcon
+      break
+    default:
+      icon = useLoadImages(props.icon)
   }
-  const [icon] = useLoadImages(props.icon)
 
   return (
     <StyledCard type={props.type}>
-      <img src={icon || iconDefault} alt='icon' />
+      <StyledIconContainer>
+        <img src={icon} alt='icon' />
+        {
+          props.type === 'addImage' && <p>Nuevo álbum</p>
+        }
+      </StyledIconContainer>
       <StyledTitleCard>{props.title}</StyledTitleCard>
       {
-        props.sectionsText.map((info, i) =>
+        props.sectionTitle.map((info, i) =>
           <div>
-            <StyledCardSubItem>{props.cardItemName[i]}</StyledCardSubItem>
-            <StyledCardSubItemText>{info}</StyledCardSubItemText>
+            <StyledCardSubItem>{info}</StyledCardSubItem>
+            <StyledCardSubItemText>{props.sectionsText[i]}</StyledCardSubItemText>
           </div>
         )
       }
       {
-        props.type === 'added' && <StyledAddIcon><img src={check} alt='checkIcon' /></StyledAddIcon>
+        props.type === 'added' && <StyledCheckIcon><img src={check} alt='checkIcon' /></StyledCheckIcon>
       }
     </StyledCard>
   )
 }
-
-export const ItemCardDone = props => (
-  <ItemCard {...props} done />
-)
 
 ItemCard.propTypes = {
   cardItemName: PropTypes.string, // el nombre de la subcategoria de la informacion de la card
   type: PropTypes.string, // el tipo de card itemp que sea
   icon: PropTypes.string.isRequired, // el path del icono a mostrar en cada card
   title: PropTypes.string, // el nombre del item del card
-  sectionsText: PropTypes.array // el array con la info a mostrar en el card
+  sectionsText: PropTypes.array, // el array con la info a mostrar en el card
+  sectionTitle: PropTypes.array // el array con el titulo de la info a mostrar
 }
 
 ItemCard.defaultProps = {
@@ -48,5 +68,6 @@ ItemCard.defaultProps = {
   cardItemName: '',
   type: '',
   icon: '',
-  sectionsText: []
+  sectionsText: [],
+  sectionTitle: []
 }

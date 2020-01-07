@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 import { COLORS, FONT_SIZE, FONT_WEIGHT } from '../../../../../Styles/constantes'
+import { Shadow } from '../../../../../Styles/GlobalStyles'
 
 const StyledCardsContainer = styled.div`
    margin: 24px 0 40px 0;
@@ -9,6 +10,7 @@ const StyledCardsContainer = styled.div`
 
 const StyledItem = styled.div`
     padding: 8px 16px;
+    cursor: pointer;
    ${props => props.active && css`
     color: ${COLORS.action_primary};
     border-radius: 12px 11px 11px 12px;
@@ -33,4 +35,16 @@ const StyledOptions = styled.div`
   color: ${COLORS.gray};
 `
 
-export { StyledCardsContainer, StyledOptions, StyledItem }
+const StyledNextButton = styled.button`
+  height: 42px;
+  width: 42px;
+  border-radius: 10px;
+  ${Shadow};
+  align-self: center;
+  svg{
+    fill: ${COLORS.action_primary}
+    width: 25px
+  }
+`
+
+export { StyledCardsContainer, StyledOptions, StyledItem, StyledNextButton }

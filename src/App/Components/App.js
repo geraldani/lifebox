@@ -12,6 +12,7 @@ import { Legal } from '../Views/Pages/Legal'
 import { Photos } from '../Views/Pages/Photos'
 import { Letters } from '../Views/Pages/Letters'
 import { Destinaratio } from '../Views/Pages/Destinatario'
+import { About } from '../Views/Pages/About'
 
 const Noesxiste = () => <h2>No existe la pagina</h2>
 const App = () => {
@@ -29,6 +30,7 @@ const App = () => {
             <Route exact path={ROUTES.health} component={Health} />
             <Route exact path={ROUTES.services} component={Services} />
             <Route exact path={ROUTES.bienes} component={Bienes} />
+            <Route exact path={ROUTES.aboutMe} component={About} />
             <Route exact path={ROUTES.legal} component={Legal} />
             <Route exact path={ROUTES.photo} component={Photos} />
             <Route exact path={ROUTES.letters} component={Letters} />

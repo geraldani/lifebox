@@ -1,12 +1,15 @@
 import React from 'react'
 import { TitleSection } from '../../../Title'
 import { ItemCard } from '../../../Cards/ItemCard'
-import { StyledCardsContainer, StyledOptions, StyledItem } from './styles'
+import { StyledCardsContainer, StyledOptions, StyledItem, StyledNextButton } from './styles'
 import PropTypes from 'prop-types'
 import { History, ROUTES } from '../../../../Components/constantes'
 import { MdSort as IconList } from 'react-icons/md' // MdSubject, MdSort , MdDialpad
 import { TiThLarge as IconSquares } from 'react-icons/ti'
-//
+import { IoMdArrowRoundForward as ArrowIcon } from 'react-icons/io'
+
+const isHomePage = pathname => pathname === ROUTES.start || pathname === ROUTES.home
+
 const ModeSee = () => {
   const info = [
     {
@@ -31,23 +34,38 @@ const ModeSee = () => {
   )
 }
 
+const ButtonArrowNext = () => (
+  <StyledNextButton>
+    <ArrowIcon />
+  </StyledNextButton>
+)
+
 export const SectionCard = (props) => {
   const { pathname } = History.location
   const commonProps = {
     cardItemName: props.sections,
     type: props.type
   }
+  const first = 0
 
   return (
     <div>
       <div className='d-flex justify-content-between'>
         <TitleSection>{props.title}</TitleSection>
         {
-          pathname !== ROUTES.start && pathname !== ROUTES.home && <ModeSee />
+          !isHomePage(pathname) && props.actualItem === first && <ModeSee />
         }
       </div>
       <StyledCardsContainer>
-        {props.cards.map(e => <ItemCard key={e.title} {...e} {...commonProps} />)}
+        {
+          props.type === 'photo' && <ItemCard type='addImage' />
+        }
+        {
+          props.cards.map(e => <ItemCard key={e.title} {...e} {...commonProps} />)
+        }
+        {
+          !isHomePage(pathname) && <ButtonArrowNext />
+        }
       </StyledCardsContainer>
     </div>
   )

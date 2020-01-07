@@ -10,7 +10,7 @@ export const Letters = () => {
       <Title>{title}</Title>
       <Subtitle>{subtitle}</Subtitle>
       {
-        sectionCards.map((cards, actualItem) => <SectionCard key={cards.title} {...cards} actualItem={actualItem} />)
+        sectionCards.map((cards, i) => <SectionCard key={cards.title} {...cards} actualItem={i} />)
       }
     </div>
   )

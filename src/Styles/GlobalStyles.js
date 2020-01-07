@@ -34,6 +34,18 @@ const GlobalStyles = createGlobalStyle`
 const Shadow = css`
   box-shadow: 0 8px 8px 0 rgba(55,27,0,0.15);
 `
+const CenteredItemColum = css`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+`
+const CenteredItemRow = css`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+
 export {
-  GlobalStyles, Shadow
+  GlobalStyles, Shadow, CenteredItemColum, CenteredItemRow
 }
