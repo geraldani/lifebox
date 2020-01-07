@@ -1,9 +1,15 @@
 import { ROUTES } from './App/Components/constantes'
+
 const menu = [
   {
     name: 'Inicio',
     icon: 'ico_casa_on_2x.png',
     link: ROUTES.start
+  },
+  {
+    name: 'Salud',
+    icon: 'ico_salud1_on_2x.png',
+    link: ROUTES.health
   },
   {
     name: 'Fotografías',
@@ -19,11 +25,6 @@ const menu = [
     name: 'Acerca de mí',
     icon: 'ico_usuario_on_2x.png',
     link: ROUTES.aboutMe
-  },
-  {
-    name: 'Salud',
-    icon: 'ico_salud1_on_2x.png',
-    link: ROUTES.health
   },
   {
     name: 'Servicios',
@@ -219,9 +220,118 @@ const photographyData = {
   ]
 }
 
+const healthData = {
+  title: 'Salud',
+  subtitle: 'Datos Importantes',
+  mainInfo: [
+    {
+      name: 'Peso',
+      value: '72Kg',
+      icon: 'ico_balanza_on_2x.png'
+    },
+    {
+      name: 'Estatura',
+      value: '1.80cm',
+      icon: 'ico_metro_on_2x.png'
+    },
+    {
+      name: 'Grupo sanguíneo',
+      value: 'O',
+      icon: 'ico_sangre_on_2x.png'
+    },
+    {
+      name: 'Factor sanguíneo',
+      value: '+',
+      icon: 'ico_sangre_on_2x.png'
+    }
+  ],
+  cards: [
+    {
+      title: 'Enfermedades',
+      subtitle: 'Que padeció o padece',
+      icon: 'ico_mas_on_2x.png',
+      info: ['Varicela', 'Sarampión', 'Hipercolesterolemia', 'Gastritis']
+    },
+    {
+      title: 'Vacunas',
+      subtitle: 'Aplicado a lo largo de la vida',
+      icon: 'ico_mas_on_2x.png',
+      info: ['Triple viral', 'Hepatitis B', 'Antirábica']
+    },
+    {
+      title: 'Estudios',
+      subtitle: 'Historial de estudios médicos realizados',
+      icon: 'ico_adjuntar_on_2x.png',
+      info: [
+        {
+          name: 'Ecografía',
+          value: '27/11/2018'
+        },
+        {
+          name: 'Radiografía',
+          value: '14/05/2018'
+        },
+        {
+          name: 'Resonancia magnética',
+          value: '22/11/2018'
+        },
+        {
+          name: 'Electrocardiograma',
+          value: '13/09/2018'
+        }
+      ]
+    },
+    {
+      title: 'Medicación',
+      subtitle: 'Recetada para enfermedades crónicas',
+      icon: 'ico_mas_on_2x.png',
+      info: [
+        {
+          name: 'Rosuvastatina',
+          value: '1000 mg',
+          niw: true
+        },
+        {
+          name: 'Aspirina',
+          value: '1000 mg'
+        }
+      ]
+    },
+    {
+      title: 'Seguro',
+      subtitle: '',
+      icon: 'ico_mas_on_2x.png',
+      info: [{
+        name: 'Osden',
+        value: 'Plan, 210'
+      }]
+    },
+    {
+      title: 'Médicos',
+      subtitle: '',
+      icon: 'ico_mas_on_2x.png',
+      info: [
+        {
+          name: 'Dr. Fernando Guerra',
+          value: 'Gastroenterólogo'
+        },
+        {
+          name: 'Dra. Agusta Diaz',
+          value: 'Cardiólogo'
+        },
+        {
+          name: 'Dr. Alejandro Mego',
+          value: 'Nutricionista'
+        }
+      ]
+    }
+  ]
+}
+
 export {
   inicioData,
   menu,
   photographyData,
-  lettersData
+  lettersData,
+  healthData
 }
