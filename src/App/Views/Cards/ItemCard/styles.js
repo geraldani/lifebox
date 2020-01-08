@@ -44,25 +44,6 @@ const styledCardItem = (type) => {
       return (
         css`
           ${CenteredItemRow};
-          ${StyledIconContainer}{
-            ${CenteredItemColum};
-            cursor: pointer;
-            img{
-              ${Shadow}
-              width: 42px;
-              height: 42px;
-              background-color: ${COLORS.action_primary};
-              padding: 15px;
-              border-radius: 10px;
-            }
-            p{
-              color: ${COLORS.action_primary};
-              font-weight: ${FONT_WEIGHT.extraBold};
-              font-size: ${FONT_SIZE.sm};
-              line-height: 20px;
-              margin-top: 16px;
-            }
-          }
         `
       )
   }
@@ -105,8 +86,6 @@ const StyledCheckIcon = styled.div`
     }
 `
 
-const StyledIconContainer = styled.div``
-
 const StyledCard = styled.div`
   box-sizing: border-box;
   width: 220px;
@@ -120,7 +99,7 @@ const StyledCard = styled.div`
   &:hover{
     ${Shadow}
   }
-  ${StyledIconContainer} img{
+  &>img{
     width: 68px;
   }
   ${StyledTitleCard}, ${StyledCardSubItem}, ${StyledCardSubItemText}{
@@ -140,5 +119,4 @@ export {
   StyledCardSubItem,
   StyledCardSubItemText,
   StyledCheckIcon,
-  StyledIconContainer
 }

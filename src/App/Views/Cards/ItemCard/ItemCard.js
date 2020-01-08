@@ -4,8 +4,7 @@ import {
   StyledTitleCard,
   StyledCardSubItem,
   StyledCardSubItemText,
-  StyledCheckIcon,
-  StyledIconContainer
+  StyledCheckIcon
 } from './styles'
 import PropTypes from 'prop-types'
 import check from '../../../../assets/ico_check_on_2x.png'
@@ -13,6 +12,7 @@ import { useLoadImages } from '../../../Hooks'
 import letterIcon from '../../../../assets/ico_mail_on_2x.png'
 import photoIcon from '../../../../assets/ico_imagen_on_2x.png'
 import addIcon from '../../../../assets/ico_mas_on_2x.png'
+import { ButtonImage } from '../../Buttons/ButtonImage'
 
 export const ItemCard = (props) => {
   let icon
@@ -32,12 +32,12 @@ export const ItemCard = (props) => {
 
   return (
     <StyledCard type={props.type}>
-      <StyledIconContainer>
-        <img src={icon} alt='icon' />
-        {
-          props.type === 'addImage' && <p>Nuevo álbum</p>
-        }
-      </StyledIconContainer>
+      {
+        props.type === 'addImage'
+          ? <ButtonImage title='Nuevo album' iconPath={icon} />
+          : <img src={icon} alt='icon' />
+      }
+
       <StyledTitleCard>{props.title}</StyledTitleCard>
       {
         props.sectionTitle.map((info, i) =>

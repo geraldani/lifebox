@@ -16,7 +16,8 @@ const COLORS = {
   bg_secondary: '#ffffff',
   border: '#D6D0E3',
   lightgrey: '#F6F2FF',
-  gray: '#9F9E9F'
+  gray: '#9F9E9F',
+  cardHeader: '#fcfbff'
 }
 
 const FONT_SIZE = {
